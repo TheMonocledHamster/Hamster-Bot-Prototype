@@ -39,7 +39,7 @@ def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
             else:
                 HamsterEngine.say("I beg your pardon")
                 HamsterEngine.runAndWait()
-                sleep(1)
+                sleep(0.5)
                 continue
         else:
             continue
