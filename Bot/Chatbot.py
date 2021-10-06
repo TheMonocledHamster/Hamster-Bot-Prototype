@@ -15,7 +15,7 @@ speechFlow = queue.Queue()
 HamsterEngine = pyttsx3.init()
 
 
-'''Follows the chatbot conversation script'''
+# Follows the chatbot conversation script
 def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
     HamsterEngine.say("Greetings!")
     HamsterEngine.runAndWait()
@@ -49,14 +49,14 @@ def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
     
 
 
-'''Thread callback for each word/audio block'''
+# Thread callback for each word/audio block
 def callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
     speechFlow.put(bytes(indata))
 
 
-'''Helper for argument parsing'''
+# Helper for argument parsing
 def str_or_int(text_string):
     try:
         return int(text_string)
@@ -68,7 +68,7 @@ Parser = argparse.ArgumentParser(add_help=False)
 
 Parser.add_argument(
     '-l', '--list-devices', action='store_true',
-    help = "List available audio devices and exit"
+    help="List available audio devices and exit"
 )
 
 args, other_args = Parser.parse_known_args()
@@ -137,8 +137,8 @@ try:
     model = vosk.Model(args.model)
 
 
-    with sounddevice.RawInputStream(samplerate=args.voskrate, blocksize = 8000, device=args.device, dtype='int16',
-                        channels=1, callback=callback):
+    with sounddevice.RawInputStream(samplerate=args.voskrate, blocksize=8000, 
+                    device=args.device, dtype='int16', channels=1, callback=callback):
         Recognizer = vosk.KaldiRecognizer(model, args.voskrate)
         print('*'*80)
         print('Ctrl+C to stop')
