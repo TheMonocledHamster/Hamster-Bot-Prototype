@@ -1,2 +1,3 @@
 # hammy-bot-prototype
-Basic prototype of a speech-recognition model
+
+PocketSphinx Trial abandoned as Vosk Trial was a success.
