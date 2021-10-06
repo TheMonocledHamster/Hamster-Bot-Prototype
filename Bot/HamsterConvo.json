@@ -1,3 +1,57 @@
 {
-    
+    "wake-on-command":
+        [
+            "hello",
+            "greetings",
+            "hamster",
+            "hey",
+            "hi",
+            "heyyo",
+            "yo"
+        ],
+    "question":
+        [
+        "Would you like to know something about hamsters?"
+        ],
+    "response":
+        {
+            "affirmative":
+                [
+                    "yea",
+                    "yes",
+                    "ye",
+                    "yep",
+                    "sure",
+                    "okay",
+                    "ok",
+                    "alright",
+                    "good",
+                    "definitely"
+                ],
+            "negative":
+                [
+                    "nah",
+                    "no",
+                    "nay",
+                    "nope",
+                    "not"
+                ]
+        },
+    "trivia":
+    [
+        "Alright! Did you know...",
+        "Hamster, from the German word hamstern means hoard, which is a favorite pastime of our hamster friends.",
+        "The Syrian hamster is the most popular pet hamster. Often referred to as teddy bear, short hair or fancy hamsters they are known to be very docile and enjoy being held.",
+        "The first hamsters came from Syria, but they have lived all over the world in places like Greece, Belgium and northern China.",
+        "Hamsters generally enjoy the companionship of their pet parent and love to be let out of their habitat to play.",
+        "Hamsters are intelligent creatures who can even learn their name. If you talk to your hamster and use their name frequently enough to get them used to hearing it, they might even learn to come when called.",
+        "Hamsters tend to keep their habitats tidy, generally relieving themselves in one or two specific corners, making it easy to litter box train them or at least scoop out soiled bedding every day to keep their spaces clean.",
+        "Most hamsters are very fast runners, and the shape and size of their hind feet allows them to run backward as well.",
+        "Dwarf hamsters are only 2 to 4 inches long, while a Syrian hamster can grow to be about 6 inches long.",
+        "Hamsters can be easily startled. Always approach your hamster from the side, use your voice and call their name to alert them that you are approaching.",
+        "Hamsters are born blind, and even as adults can only see a few inches in front of their nose.",
+        "Hamsters have cheek pouches that they use for storing food. So while it may appear that your hamster is eating a lot, they are likely just storing some of it in their cheeks to transport around their habitat and keep in their burrows. These large cheeks can actually make a hamster’s head look double, or even triple, its actual size.",
+        "Hamsters use their front and back paws like humans use their hands, mainly to grip their food and toys.",
+        "Hamsters have moods. According to one study, hamsters with plenty of toys and cozy bedding made more optimistic choices."
+    ]
 }
