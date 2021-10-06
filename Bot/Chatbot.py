@@ -145,7 +145,7 @@ try:
         while True:
             data = speechFlow.get()
             if Recognizer.AcceptWaveform(data=data) and \
-            json.loads(Recognizer.Result())["text"] in ConvoScript["wake-on-command"]:
+              json.loads(Recognizer.Result())["text"] in ConvoScript["wake-on-command"]:
                 print("Greetings!")
                 hamster_convo(HamsterEngine, ConvoScript, Recognizer)
                 print("Goodbye!")
