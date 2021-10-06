@@ -4,16 +4,49 @@ import os
 import sys
 import argparse
 import queue
-import sounddevice as sd
+import sounddevice
 import random
 import json
+from time import sleep
 
 
-"""Initialize queue for speech-to-text"""
 speechFlow = queue.Queue()
 
-"""Initialize TTS engine"""
 HamsterEngine = pyttsx3.init()
+
+
+"""Follows the chatbot conversation script"""
+def hamster_convo(HamsterEngine, ConvoScript,Recognizer):
+    HamsterEngine.say("Greetings!")
+    HamsterEngine.runAndWait()
+    print("In conversation...")
+    HamsterEngine.say(ConvoScript["question"])
+    HamsterEngine.runAndWait()
+    while True:
+        data = speechFlow.get()
+        if Recognizer.AcceptWaveform(data=data):
+            word = json.loads(Recognizer.Result())["text"]
+            if word in ConvoScript["response"]["yea"]:
+                HamsterEngine.say([ConvoScript["trivia"][0]])
+                HamsterEngine.runAndWait()
+                HamsterEngine.say([ConvoScript["trivia"][random.randint(1,13)]])
+                HamsterEngine.runAndWait()
+                break
+            elif word in ConvoScript["response"]["nope"]:
+                break
+            elif not word:
+                continue
+            else:
+                HamsterEngine.say("I beg your pardon")
+                HamsterEngine.runAndWait()
+                sleep(1)
+                continue
+        else:
+            continue
+    HamsterEngine.say("Okay, have a good day!")
+    HamsterEngine.runAndWait()
+    return
+    
 
 
 """Thread callback for each word/audio block"""
@@ -30,48 +63,55 @@ def str_or_int(text_string):
         return text_string
 
 
-parser = argparse.ArgumentParser(add_help=False)
+Parser = argparse.ArgumentParser(add_help=False)
 
-parser.add_argument(
+Parser.add_argument(
     '-l', '--list-devices', action='store_true',
     help = "List available audio devices and exit"
 )
 
-args, other_args = parser.parse_known_args()
+args, other_args = Parser.parse_known_args()
 
 if args.list_devices:
-    print(sd.query_devices())
-    parser.exit(0)
+    print(sounddevice.query_devices())
+    Parser.exit(0)
 
-parser = argparse.ArgumentParser(
+Parser = argparse.ArgumentParser(
     description=__doc__,
     formatter_class=argparse.RawDescriptionHelpFormatter,
-    parents=[parser]
+    parents=[Parser]
 )
 
-parser.add_argument(
+Parser.add_argument(
     '-m', '--model', type=str, metavar='MODEL_PATH',
     help='Path to the model'
 )
-parser.add_argument(
+Parser.add_argument(
     '-f', '--filename', type=str, metavar='FILENAME',
     help='audio file to store recording to'
 )
-parser.add_argument(
+Parser.add_argument(
     '-d', '--device', type=str_or_int,
     help='input device (numeric ID or substring)'
 )
-parser.add_argument(
+Parser.add_argument(
     '-r', '--voskrate', type=int, help='vosk sampling rate'
 )
-parser.add_argument(
+Parser.add_argument(
     '-R', '--espeakrate', type=int, help='espeak sampling rate'
 )
-parser.add_argument(
+Parser.add_argument(
     '-v', '--volume', type=float, help='espeak volume [0.0,1.0]'
 )
 
-args = parser.parse_args(other_args)
+args = Parser.parse_args(other_args)
+
+
+try:
+    with open('HamsterConvo.json','r') as json_file:
+        ConvoScript = json.load(json_file)
+except:
+    print("Please ensure 'HamsterConvo.json' is present in the directory")
 
 
 try:
@@ -79,12 +119,12 @@ try:
         args.model = "model"
     if not os.path.exists(args.model):
         print("Please place the model named as 'model' in the directory")
-        parser.exit(0)
+        Parser.exit(0)
     if args.voskrate is None:
-        device_info = sd.query_devices(args.device,'input')
+        device_info = sounddevice.query_devices(args.device,'input')
         args.voskrate = int(device_info['default_samplerate'])
     if args.espeakrate is None:
-        args.espeakrate = HamsterEngine.getProperty('rate')
+        args.espeakrate = 160
     if args.volume is None:
         args.volume = HamsterEngine.getProperty('volume')
     if args.filename:
@@ -96,18 +136,26 @@ try:
     model = vosk.Model(args.model)
 
 
-    with sd.RawInputStream(samplerate=args.voskrate,blocksize = 8000, device=args.device, dtype='int16', channels=1, callback=callback):
-        recognizer = vosk.KaldiRecognizer(model,args.voskrate)
+    with sounddevice.RawInputStream(samplerate=args.voskrate,blocksize = 8000, device=args.device, dtype='int16', 
+                        channels=1, callback=callback):
+        Recognizer = vosk.KaldiRecognizer(model,args.voskrate)
         print('*'*80)
         print('Ctrl+C to stop')
 
         while True:
             data = speechFlow.get()
-            if recognizer.AcceptWaveform(data=data):
-                print(recognizer.Result())
+            if Recognizer.AcceptWaveform(data=data) and \
+                json.loads(Recognizer.Result())["text"] in ConvoScript["wake-on-command"]:
+                print("Greetings!")
+                hamster_convo(HamsterEngine,ConvoScript,Recognizer)
+                print("Goodbye!")
+                Parser.exit(0)
             else:
                 continue
 
 
+except KeyboardInterrupt:
+    print("\nGoodbye!")
+    Parser.exit(0)
 except Exception as e:
-    parser.exit(type(e).__name__+': '+str(e))
+    Parser.exit(type(e).__name__+': '+str(e))
