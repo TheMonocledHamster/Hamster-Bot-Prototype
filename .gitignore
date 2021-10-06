@@ -129,6 +129,5 @@ dmypy.json
 .pyre/
 
 # Model
-vosk-model-en-in-0.4.zip
-vosk-model-en-in-0.4
-model/
+vosk-model
+model_large/
