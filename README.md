@@ -33,6 +33,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 
 [Future Plans] 
 * I intend to expand the range of the conversation, and hopefully add some NLP functionality.
+* The voice is currently too robotic (limitation of espeak on Linux). Some improvements are in order on that front.
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
 * I will attempt to add a basic UI and animations (using Flutter?) by the end of October 2021.
 
