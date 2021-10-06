@@ -46,7 +46,6 @@ def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
     HamsterEngine.say("Okay, have a good day!")
     HamsterEngine.runAndWait()
     return
-    
 
 
 # Thread callback for each word/audio block
@@ -138,7 +137,7 @@ try:
 
 
     with sounddevice.RawInputStream(samplerate=args.voskrate, blocksize=8000, 
-                    device=args.device, dtype='int16', channels=1, callback=callback):
+                            device=args.device, dtype='int16', channels=1, callback=callback):
         Recognizer = vosk.KaldiRecognizer(model, args.voskrate)
         print('*'*80)
         print('Ctrl+C to stop')
@@ -146,7 +145,7 @@ try:
         while True:
             data = speechFlow.get()
             if Recognizer.AcceptWaveform(data=data) and \
-                json.loads(Recognizer.Result())["text"] in ConvoScript["wake-on-command"]:
+            json.loads(Recognizer.Result())["text"] in ConvoScript["wake-on-command"]:
                 print("Greetings!")
                 hamster_convo(HamsterEngine, ConvoScript, Recognizer)
                 print("Goodbye!")
