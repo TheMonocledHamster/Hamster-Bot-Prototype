@@ -137,7 +137,7 @@ try:
 
 
     with sounddevice.RawInputStream(samplerate=args.voskrate, blocksize=8000, 
-                            device=args.device, dtype='int16', channels=1, callback=callback):
+                                    device=args.device, dtype='int16', channels=1, callback=callback):
         Recognizer = vosk.KaldiRecognizer(model, args.voskrate)
         print('*'*80)
         print('Ctrl+C to stop')
