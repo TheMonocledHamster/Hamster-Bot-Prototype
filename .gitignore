@@ -132,4 +132,5 @@ dmypy.json
 workspace.code-workspace
 
 # Testing
-portaudio/
+vosk-api/
+vosk-model-small-en-in-0.4.zip
