@@ -15,7 +15,7 @@ speechFlow = queue.Queue()
 HamsterEngine = pyttsx3.init()
 
 
-"""Follows the chatbot conversation script"""
+'''Follows the chatbot conversation script'''
 def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
     HamsterEngine.say("Greetings!")
     HamsterEngine.runAndWait()
@@ -49,14 +49,14 @@ def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
     
 
 
-"""Thread callback for each word/audio block"""
+'''Thread callback for each word/audio block'''
 def callback(indata, frames, time, status):
     if status:
         print(status, file=sys.stderr)
     speechFlow.put(bytes(indata))
 
 
-"""Helper for argument parsing"""
+'''Helper for argument parsing'''
 def str_or_int(text_string):
     try:
         return int(text_string)
