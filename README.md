@@ -1,5 +1,7 @@
 # Chatbot Prototype
 Description: Basic prototype of a rudimentary chatbot
+</br>
+[NOTE]This entire project was developed in 2 nights, so there are many possible avenues for improvement. I'd be grateful for PRs and Bugfix Tickets.
 </br></br></br>
 Preferred OS: Any Debian-based distro. (Developed in Kubuntu 20.04)
 
