@@ -37,6 +37,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 * The voice is currently too robotic (limitation of espeak on Linux). Some improvements are in order on that front.
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
 * I will attempt to add a basic UI and animations (using Flutter?) by the end of October 2021.
+* I'm considering adding Noise-Cancelling and better recognition accuracy by providing support for multi-mic audio-capture. The code is already thread-safe, and implementing multi-threading and/or multi-processing should not be too much of a challenge.
 
 </br></br>
 
