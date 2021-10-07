@@ -27,8 +27,8 @@ Code used for testing: https://github.com/alphacep/vosk-api
 [Instructions] Once the installation is setup and you run the script:
 * Say "hello", "greetings", "hamster" or any other command as mentioned in the .json file to wake the bot.
 * Reply to the question with "yes" (or a variant), "no" (or a variant, again), something else, or even nothing at all.
-* Remember to be courteous to the bot. (Or not, no one would know either ways)
 * The default model present is trained for Indian English. For other accents, please get the relevant vosk model.
+* Remember to be courteous to the bot. (Or not, no one would know either ways)
 
 </br></br>
 
