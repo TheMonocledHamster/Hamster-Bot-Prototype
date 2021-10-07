@@ -1,5 +1,5 @@
 # Chatbot Prototype
-Description: Basic prototype of a rudimentary chatbot
+Description: Basic prototype of a rudimentary chatbot (Completely Offline)
 </br></br></br>
 Preferred OS: Any Debian-based distro. (Developed in Kubuntu 20.04)
 
