@@ -18,7 +18,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 </br></br>
 
 [IMPORTANT] Verify the following while cloning this repo:
-* Both the python and script and .json file are in the 'Bot/' directory.
+* Both the python script and .json file are in the 'Bot/' directory.
 * The folder containing the vosk model is named 'model'.
 * The 'model' folder is in the 'Bot/' directory.
 
@@ -28,7 +28,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 * Say "hello", "greetings", "hamster" or any other command as mentioned in the .json file to wake the bot.
 * Reply to the question with "yes" (or a variant), "no" (or a variant, again), something else, or even nothing at all.
 * The default model present is trained for Indian English. For other accents, please get the relevant vosk model.
-* Remember to be courteous to the bot. (Or not, no one would know either ways)
+* Remember to be courteous to the bot. (Or not, no one would know either ways,absolutely no telemetry here)
 
 </br></br>
 
