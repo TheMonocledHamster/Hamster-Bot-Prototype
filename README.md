@@ -1,7 +1,5 @@
 # Chatbot Prototype
 Description: Basic prototype of a rudimentary chatbot
-</br></br>
-[NOTE] This entire project was developed in 2 nights, so there are many possible avenues for improvement. I'd be grateful for PRs and Bugfix Tickets.
 </br></br></br>
 Preferred OS: Any Debian-based distro. (Developed in Kubuntu 20.04)
 
@@ -48,3 +46,5 @@ Thank you for visiting this page. I hope you enjoyed experimenting with the bot 
 </br>
 
 [NOTE] This entire project is in the public domain, and licensed under 'Unlicense'. Do look it up, it's an interesting concept.
+</br></br>
+[NOTE] This entire project was developed in 2 nights, so there are many possible avenues for improvement. I'd be grateful for PRs and Bugfix Tickets.
