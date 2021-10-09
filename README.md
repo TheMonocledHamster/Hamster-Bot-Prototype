@@ -33,11 +33,14 @@ Code used for testing: https://github.com/alphacep/vosk-api
 </br></br>
 
 [Future Plans] 
-* I intend to expand the range of the conversation, and hopefully add some NLP functionality.
-* The voice is currently too robotic (limitation of espeak on Linux). Some improvements are in order on that front.
+* I intend to expand the range of the conversation, and hopefully add some NLP functionality. 
+  [Update] To this end, I'm presently testing out Google's BERT and OpenAI's GPT-2 transformer models.
+* The voice is currently too robotic (limitation of espeak on Linux). Some improvements are in order on that front. 
+  [Update] I'm currently attempting to get SAPI5 working on Linux as well, to improve conversation quality.
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
-* I will attempt to add a basic UI and animations (using Flutter?) by the end of October 2021.
 * I'm considering adding Noise-Cancelling and better recognition accuracy by providing support for multi-mic audio-capture. The code is already thread-safe, and implementing multi-threading and/or multi-processing should not be too much of a challenge.
+  [Update] I'm currently scoping out Nginx hosting, towards this end.
+* 
 
 </br></br>
 
@@ -45,6 +48,6 @@ Thank you for visiting this page. I hope you enjoyed experimenting with the bot 
 
 </br>
 
-[NOTE] This entire project is in the public domain, and licensed under 'Unlicense'. Do look it up, it's an interesting concept.
+[NOTE] This project is licensed under the MIT License. I intend to keep this project as free and open source software (FOSS) indefinitely, throughout it's deelopment cycle.
 </br></br>
-[NOTE] This entire project was developed in 2 nights, so there are many possible avenues for improvement. I'd be grateful for PRs and Bugfix Tickets.
+[NOTE] This core of the project was developed in 2 nights (5th and 6th Oct, 2021), so there are multiple possible avenues for improvement. I'd be grateful for any PRs and Bugfix or Feature Tickets.
