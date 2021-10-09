@@ -34,7 +34,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 
 [Future Plans] 
 * I intend to expand the range of the conversation, and hopefully add some NLP functionality. </br>
-  [Update] To this end, I'm presently testing out Google's BERT and OpenAI's GPT-2 transformer models.
+  [Update] To this end, I'm presently testing out Google's BERT and OpenAI's GPT-2 transformer models. (GPT-J is next)
 * The voice is currently too robotic (limitation of espeak on Linux). Some improvements are in order on that front. 
   [Update] I'm currently attempting to get SAPI5 working on Linux as well, to improve conversation quality.
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
