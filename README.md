@@ -41,7 +41,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
 * I'm considering adding Noise-Cancelling and better recognition accuracy by providing support for multi-mic audio-capture. The code is already thread-safe, and implementing multi-threading and/or multi-processing should not be too much of a challenge.
 * I intend to containerize and deploy a more presentable project in a web app within the next few weeks. </br>
-  [Update] I'm currently learning about deployment via Dockers and Kubernetes clusters to achieve this goal.
+  [Update] I'm currently learning about deployment via Dockers and Kubernetes clusters (Using Ansible) to achieve this goal.
 
 </br></br>
 
