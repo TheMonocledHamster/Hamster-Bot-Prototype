@@ -12,8 +12,6 @@ from time import sleep
 
 speechFlow = queue.Queue()
 
-HamsterEngine = pyttsx3.init()
-
 
 # Follows the chatbot conversation script
 def hamster_convo(HamsterEngine, ConvoScript, Recognizer):
@@ -88,7 +86,7 @@ Parser.add_argument(
 )
 Parser.add_argument(
     '-f', '--filename', type=str, metavar='FILENAME',
-    help='audio file to store recording to'
+    help='audio file to write to'
 )
 Parser.add_argument(
     '-d', '--device', type=str_or_int,
@@ -98,14 +96,17 @@ Parser.add_argument(
     '-r', '--voskrate', type=int, help='vosk sampling rate'
 )
 Parser.add_argument(
-    '-R', '--espeakrate', type=int, help='espeak sampling rate'
+    '-R', '--ttsrate', type=int, help='tts engine sampling rate'
 )
 Parser.add_argument(
-    '-v', '--volume', type=float, help='espeak volume [0.0,1.0]'
+    '-v', '--volume', type=float, help='tts engine volume [0.0,1.0]'
+)
+Parser.add_argument(
+    '-e', '--engine', type=str, help='choice of tts engine'
 )
 
 args = Parser.parse_args(other_args)
-
+HamsterEngine = pyttsx3.init()
 
 try:
     with open('HamsterConvo.json', 'r') as json_file:
@@ -120,11 +121,13 @@ try:
     if not os.path.exists(args.model):
         print("Please place the model named as 'model' in the directory")
         Parser.exit(0)
+    if args.engine is not None:
+        HamsterEngine = pyttsx3.init(driverName=args.engine)
     if args.voskrate is None:
         device_info = sounddevice.query_devices(args.device, 'input')
         args.voskrate = int(device_info['default_samplerate'])
-    if args.espeakrate is None:
-        args.espeakrate = 160
+    if args.ttsrate is None:
+        args.ttsrate = 160
     if args.volume is None:
         args.volume = HamsterEngine.getProperty('volume')
     if args.filename:
