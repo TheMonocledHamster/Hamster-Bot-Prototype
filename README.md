@@ -11,6 +11,13 @@ Additional Libraries Used:
 * sounddevice (To capture sound input from mic) [https://pypi.org/project/sounddevice/]
 * vosk (Speech recognition engine) [https://pypi.org/project/vosk/]
 
+If you're running Linux on ARM devices, install the following modules:
+* espeak
+* libportaudio2
+* libatomic1  
+
+Ubuntu: ``sudo apt-get install espeak libatomic1 libportaudio2``
+
 Vosk Model sourced from https://alphacephei.com/vosk/models
 
 Code used for testing: https://github.com/alphacep/vosk-api
