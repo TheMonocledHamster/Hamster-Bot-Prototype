@@ -47,7 +47,7 @@ Code used for testing: https://github.com/alphacep/vosk-api
   [Update] I'm currently attempting to get SAPI5 working on Linux as well, to improve conversation quality.
 * The bot may soon be learning another language! I'm considering adding either Kannada or German language capabilities.
 * I'm considering adding Noise-Cancelling and better recognition accuracy by providing support for multi-mic audio-capture.
-* I intend to containerize and deploy a more presentable project in a web app within the next few weeks. </br>
+* I intend to containerize and deploy a more presentable project in a web app soon. </br>
   [Update] I'm currently learning about deployment via Dockers and Kubernetes clusters (with Vagrant) to achieve this goal.
 
 </br></br>
