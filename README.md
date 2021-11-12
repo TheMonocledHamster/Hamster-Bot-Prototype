@@ -16,7 +16,7 @@ If you're running Linux on ARM devices, install the following modules:
 * libportaudio2
 * libatomic1  
 
-Ubuntu: ``sudo apt-get install espeak libatomic1 libportaudio2``
+  Ubuntu: ``sudo apt-get install espeak libatomic1 libportaudio2``
 
 Vosk Model sourced from https://alphacephei.com/vosk/models
 
@@ -57,4 +57,4 @@ Thank you for visiting this page. I hope you enjoyed experimenting with the bot 
 
 [NOTE] This project is licensed under the MIT License. I intend to continue to keep this project FOSS indefinitely, regardless of where it reaches in its development cycle.
 </br>
-[NOTE] The core project components were developed in 2 nights (5th and 6th Oct, 2021), so there are multiple possible avenues for improvement. I'd be grateful for any PRs and Bugfix or Feature Tickets.
+[NOTE] There are multiple possible avenues for improvement. I'd be grateful for any PRs and Bugfix or Feature Tickets.
