@@ -51,7 +51,3 @@ Code used for testing: https://github.com/alphacep/vosk-api
 
 Thank you for visiting this page. I hope you enjoyed experimenting with the bot as much as I did developing it. I encourage all visitors to fork this repository and add any features that they feel might be useful. Please do hit me up with PRs and Issues, even ideas, let's see how far we can take this project.
 </br>
-
-[NOTE] This project is licensed under the MIT License. I intend to continue to keep this project FOSS indefinitely, regardless of where it reaches in its development cycle.
-</br>
-[NOTE] There are multiple possible avenues for improvement. I'd be grateful for any PRs and Bugfix or Feature Tickets.
